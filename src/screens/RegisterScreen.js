@@ -22,7 +22,6 @@ const FormInput = ({ label, icon, error, ...props }) => (
 const extractErrorMessage = (data) => {
   if (!data) return 'Something went wrong. Please try again.';
 
-
   if (data.error && typeof data.error === 'object' && !Array.isArray(data.error)) {
     const firstVal = Object.values(data.error)[0];
     return Array.isArray(firstVal) ? firstVal[0] : String(firstVal);
@@ -79,7 +78,7 @@ const RegisterScreen = ({ navigation }) => {
     setErrors(e);
     return Object.keys(e).length === 0;
   };
-  
+
 // Register User
   const handleRegister = async () => {
     if (!validateStep1()) return;
@@ -87,8 +86,7 @@ const RegisterScreen = ({ navigation }) => {
     setApiError('');
     try {
       const response = await registerUser(form);
-      console.log('REGISTER RESPONSE:', JSON.stringify(response, null, 2));
-
+  
 
       if (response?.status !== true) {
         setApiError(extractErrorMessage(response));
@@ -100,7 +98,6 @@ const RegisterScreen = ({ navigation }) => {
       setStep(2);
 
     } catch (err) {
-      console.log('REGISTER ERROR:', JSON.stringify(err?.response?.data, null, 2));
   
       setApiError(extractErrorMessage(err?.response?.data));
     } finally {
@@ -118,7 +115,6 @@ const RegisterScreen = ({ navigation }) => {
     setApiError('');
     try {
       const response = await verifyPhone({ phone: form.phone, otp });
-      console.log('VERIFY RESPONSE:', JSON.stringify(response, null, 2));
 
 
       if (response?.status !== true) {
@@ -130,7 +126,7 @@ const RegisterScreen = ({ navigation }) => {
         { text: 'Login Now', onPress: () => navigation.replace('Login') },
       ]);
     } catch (err) {
-      console.log('VERIFY ERROR:', JSON.stringify(err?.response?.data, null, 2));
+      // console.log( JSON.stringify(err?.response?.data, null, 2));
       setApiError(extractErrorMessage(err?.response?.data));
     } finally {
       setLoading(false);

@@ -48,7 +48,7 @@ const HomeScreen = ({ navigation }) => {
         companiesRes?.data || companiesRes?.companies || companiesRes || []
       );
     } catch (err) {
-      console.error('API Error:', err);
+      // console.error('api error:', err);
       setError('Failed to load data. Please check your internet connection.');
     } finally {
       setLoading(false);
