@@ -16,7 +16,7 @@ const IndustryCard = ({ item }) => {
       ) : (
         <View style={styles.placeholder}>
           <Text style={styles.placeholderText}>
-            {item?.name?.charAt(0) || '?'}
+            {item?.name?.charAt(0) || 'I'}
           </Text>
         </View>
       )}

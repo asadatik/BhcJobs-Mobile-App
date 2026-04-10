@@ -37,7 +37,7 @@ const HomeScreen = ({ navigation }) => {
         getCompanies(),
       ]);
 
-      // Handle various API response structures
+//
       setIndustries(
         industriesRes?.data || industriesRes?.industries || industriesRes || []
       );
@@ -91,7 +91,7 @@ const HomeScreen = ({ navigation }) => {
         style={styles.container}
         showsVerticalScrollIndicator={false}
       >
-        {/* ===== HERO SECTION ===== */}
+        {/* hero section */}
         <View style={styles.hero}>
           <Text style={styles.appName}>BHC Jobs</Text>
           <Text style={styles.tagline}>Find Your Dream Job Today</Text>
@@ -122,7 +122,7 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* ===== POPULAR INDUSTRIES ===== */}
+        {/*popular Industries*/}
         <View style={styles.section}>
           <SectionHeader title="Popular Industries" />
           {industries.length > 0 ? (
@@ -141,7 +141,7 @@ const HomeScreen = ({ navigation }) => {
           )}
         </View>
 
-        {/* ===== RECOMMENDED JOBS ===== */}
+        {/*job section*/}
         <View style={styles.section}>
           <SectionHeader title="Recommended Jobs" />
           {jobs.length > 0 ? (
@@ -156,7 +156,7 @@ const HomeScreen = ({ navigation }) => {
           )}
         </View>
 
-        {/* ===== POPULAR COMPANIES ===== */}
+        {/*Companies section*/}
         <View style={styles.section}>
           <SectionHeader title="Popular Companies" />
           {companies.length > 0 ? (
@@ -175,7 +175,7 @@ const HomeScreen = ({ navigation }) => {
           )}
         </View>
 
-        {/* ===== BOTTOM CTA ===== */}
+    {/* cta */}
         <View style={styles.bottomCTA}>
           <Text style={styles.ctaText}>Ready to find your next job?</Text>
           <TouchableOpacity
@@ -191,6 +191,8 @@ const HomeScreen = ({ navigation }) => {
     </SafeAreaView>
   );
 };
+
+
 
 const styles = StyleSheet.create({
   safeArea: {

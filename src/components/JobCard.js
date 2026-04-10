@@ -3,8 +3,8 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { getCompanyImageUrl } from '../api/apiService';
 
 const JobCard = ({ item }) => {
-  const imageUrl = getCompanyImageUrl(item?.image || item?.company_image);
-
+const imageUrl = getCompanyImageUrl(item?.company?.image);
+  //  console.log("Job Item Data:", item);
   return (
     <TouchableOpacity style={styles.card} activeOpacity={0.8}>
       <View style={styles.logoContainer}>
